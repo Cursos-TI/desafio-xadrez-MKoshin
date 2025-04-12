@@ -1,32 +1,180 @@
 #include <stdio.h>
 
-// Desafio de Xadrez - MateCheck
-// Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
-// O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
+int main(){
+    // bispo 5 casas diagonal
+    // rainha 8 casas a esquerda
+    // torre 5 casas a frente
+    int opcao, movimento;
+    
+    printf("Opções\n");
+    printf("1. Bispo\n");
+    printf("2. Rainha\n");
+    printf("3. Torre\n");
+    printf("Escolha uma opção: ");
+    scanf("%d", &opcao);
 
-int main() {
-    // Nível Novato - Movimentação das Peças
-    // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
+    switch(opcao){
+    
+    case 1:
+        printf("Escolha de movimentos\n");
+        printf("1. Diagonal superior direita\n");
+        printf("2. Diagonal superior esquerda\n");
+        printf("3. Diagonal inferior direita\n");
+        printf("4. Diagonal inferior esquerda\n");
+        printf("Escolha o movimento: ");
+        scanf("%d", &movimento);
 
-    // Implementação de Movimentação do Bispo
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
+        switch (movimento)
+        {
+        case 1: // DIAGONAL DIREITA BISPO
+            for(int b = 0; b < 5; b++){
+            printf("Direita, ");
+            printf("Cima\n");
+            }
+            break;
+            
+        case 2: // DIAGONAL ESQUERDA BISPO
+        for(int b = 0; b < 5; b++){
+            printf("Esquerda, ");
+            printf("Cima\n");
+            }
+            break;
+            
+        case 3: // DIAGONAL DIREITO BAIXO BISPO
+        for(int b = 0; b < 5; b++){
+            printf("Direita, ");
+            printf("Baixo\n");
+            }
+            break;
+            
+        case 4: // DIAGONAL ESQUERDO BAIXO BISPO
+        for(int b = 0; b < 5; b++){
+            printf("Esquerda, ");
+            printf("Baixo\n");
+            }
+        
+        default:
+        printf("Opção errada");
 
-    // Implementação de Movimentação da Torre
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
+        }
+        break;
 
-    // Implementação de Movimentação da Rainha
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
+    case 2:
+        printf("Escolha de movimentos\n");
+        printf("1. Direita\n");
+        printf("2. Esquerda\n");
+        printf("3. Superior\n");
+        printf("4. Inferior\n");
+        printf("5. Diagonal superior direita\n");
+        printf("6. Diagonal superior esquerda\n");
+        printf("7. Diagonal inferior direita\n");
+        printf("8. Diagonal inferior esquerda\n");
+        printf("Escolha o movimento: ");
+        scanf("%d", &movimento);
 
-    // Nível Aventureiro - Movimentação do Cavalo
-    // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
-    // Um loop pode representar a movimentação horizontal e outro vertical.
+        switch(movimento){
 
-    // Nível Mestre - Funções Recursivas e Loops Aninhados
-    // Sugestão: Substitua as movimentações das peças por funções recursivas.
-    // Exemplo: Crie uma função recursiva para o movimento do Bispo.
+            case 1: // DIREITA RAINHA
+                for (int r = 0; r < 8; r++){
+                    printf("Direita");
+                }
+            break;
 
-    // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
-    // Inclua o uso de continue e break dentro dos loops.
+            case 2: // ESQUERDA RAINHA 
+                for (int r = 0; r < 8; r++){
+                    printf("Esquerda");
+                }
+            break;
 
-    return 0;
+            case 3: // SUPERIOR RAINHA
+                for (int r = 0; r < 8; r++){
+                    printf("Cima");
+                }
+            break;
+
+            case 4: // INFERIOR RAINHA
+                for (int r = 0; r < 8; r++){
+                    printf("Baixo");
+                }
+            break;
+
+            case 5: // DIAGONAL SUPERIOR DIREITA RAINHA
+                for (int r = 0; r < 8; r++){
+                    printf("Direita");
+                    printf("Cima\n");
+                }
+            break;
+
+            case 6: // DIAGONAL SUPERIOR ESQUERDA RAINHA
+                for (int r = 0; r < 8; r++){
+                    printf("Esquerda");
+                    printf("Cima\n");
+                }
+            break;
+
+            case 7: // DIAGONAL INFERIOR DIREITA RAINHA
+                for (int r = 0; r < 8; r++){
+                    printf("Direita");
+                    printf("Baixo\n");
+                }
+            break;
+
+            case 8: // DIAGONAL INFERIOR ESQUERDA RAINHA
+                for (int r = 0; r < 8; r++){
+                    printf("Esquerda");
+                    printf("Baixo\n");
+                }
+            break;
+            default:
+            printf("Opção inválida");
+        }
+
+        break;
+
+    case 3: // movimento da torre
+
+        printf("Escolha de movimentos\n");
+        printf("1. Direita\n");
+        printf("2. Esquerda\n");
+        printf("3. Superior\n");
+        printf("4. Inferior\n");
+        printf("Escolha o movimento: ");
+        scanf("%d", &movimento);
+
+        switch(movimento){
+
+        case 1:
+            for (int i = 0; i < 5; i++) {
+                printf("Direita\n"); // imprime a direção do movimento
+            }
+
+            break;
+        case 2:
+        for (int i = 0; i < 5; i++) {
+            printf("Esquerda\n"); // imprime a direção do movimento
+        }
+
+            break;
+
+        case 3:
+        for (int i = 0; i < 5; i++) {
+            printf("Cima\n"); // imprime a direção do movimento
+        }
+
+            break;
+
+        case 4:
+        for (int i = 0; i < 5; i++) {
+            printf("Baixo\n"); // imprime a direção do movimento
+        }
+            break;
+
+        default:
+        printf("Opção inválida");
+}
+        break;
+
+        default:
+        printf("Opção inválida");
+}
 }
