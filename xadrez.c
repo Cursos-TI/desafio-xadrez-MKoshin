@@ -4,8 +4,12 @@ int main(){
     // bispo 5 casas diagonal
     // rainha 8 casas a esquerda
     // torre 5 casas a frente
-    int opcao, movimento;
-    
+
+    int opcao, movimento; // variavel pra receber as opções switch
+
+    int b = 0; // variavel bispo
+    int i = 0; // variavel torre
+
     printf("Opções\n");
     printf("1. Bispo\n");
     printf("2. Rainha\n");
@@ -26,32 +30,43 @@ int main(){
 
         switch (movimento)
         {
-        case 1: // DIAGONAL DIREITA BISPO
-            for(int b = 0; b < 5; b++){
+        case 1:
+
+            while(b < 5){
             printf("Direita, ");
             printf("Cima\n");
+            b++;
             }
+
             break;
-            
-        case 2: // DIAGONAL ESQUERDA BISPO
-        for(int b = 0; b < 5; b++){
+        case 2:
+
+            while (b < 5){
             printf("Esquerda, ");
             printf("Cima\n");
+            b++;
             }
-            break;
             
-        case 3: // DIAGONAL DIREITO BAIXO BISPO
-        for(int b = 0; b < 5; b++){
+
+            break;
+        case 3:
+
+            while (b < 5){
             printf("Direita, ");
             printf("Baixo\n");
+            b++;
             }
-            break;
             
-        case 4: // DIAGONAL ESQUERDO BAIXO BISPO
-        for(int b = 0; b < 5; b++){
+            break;
+
+        case 4:
+
+            while (b < 5){
             printf("Esquerda, ");
             printf("Baixo\n");
-            }
+            b++;
+            } 
+            break;
         
         default:
         printf("Opção errada");
@@ -74,52 +89,52 @@ int main(){
 
         switch(movimento){
 
-            case 1: // DIREITA RAINHA
+            case 1:
                 for (int r = 0; r < 8; r++){
                     printf("Direita");
                 }
             break;
 
-            case 2: // ESQUERDA RAINHA 
+            case 2:
                 for (int r = 0; r < 8; r++){
                     printf("Esquerda");
                 }
             break;
 
-            case 3: // SUPERIOR RAINHA
+            case 3:
                 for (int r = 0; r < 8; r++){
                     printf("Cima");
                 }
             break;
 
-            case 4: // INFERIOR RAINHA
+            case 4:
                 for (int r = 0; r < 8; r++){
                     printf("Baixo");
                 }
             break;
 
-            case 5: // DIAGONAL SUPERIOR DIREITA RAINHA
+            case 5:
                 for (int r = 0; r < 8; r++){
                     printf("Direita");
                     printf("Cima\n");
                 }
             break;
 
-            case 6: // DIAGONAL SUPERIOR ESQUERDA RAINHA
+            case 6:
                 for (int r = 0; r < 8; r++){
                     printf("Esquerda");
                     printf("Cima\n");
                 }
             break;
 
-            case 7: // DIAGONAL INFERIOR DIREITA RAINHA
+            case 7:
                 for (int r = 0; r < 8; r++){
                     printf("Direita");
                     printf("Baixo\n");
                 }
             break;
 
-            case 8: // DIAGONAL INFERIOR ESQUERDA RAINHA
+            case 8:
                 for (int r = 0; r < 8; r++){
                     printf("Esquerda");
                     printf("Baixo\n");
@@ -144,29 +159,33 @@ int main(){
         switch(movimento){
 
         case 1:
-            for (int i = 0; i < 5; i++) {
+            do{
                 printf("Direita\n"); // imprime a direção do movimento
-            }
+                i++;
+            } while (i < 5);
 
             break;
         case 2:
-        for (int i = 0; i < 5; i++) {
-            printf("Esquerda\n"); // imprime a direção do movimento
-        }
+            do{
+                printf("Esquerda\n"); // imprime a direção do movimento
+                i++;
+            } while (i < 5);
 
             break;
 
         case 3:
-        for (int i = 0; i < 5; i++) {
-            printf("Cima\n"); // imprime a direção do movimento
-        }
+            do{
+                printf("Cima\n"); // imprime a direção do movimento
+                i++;
+            } while (i < 5);
 
             break;
 
         case 4:
-        for (int i = 0; i < 5; i++) {
-            printf("Baixo\n"); // imprime a direção do movimento
-        }
+            do{
+                printf("Baixo\n"); // imprime a direção do movimento
+                i++;
+            } while (i < 5);
             break;
 
         default:
@@ -177,4 +196,5 @@ int main(){
         default:
         printf("Opção inválida");
 }
+return 0;
 }
