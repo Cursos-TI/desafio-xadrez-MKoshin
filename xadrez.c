@@ -11,6 +11,133 @@ int main()
     int b; // variavel bispo
     int i; // variavel torre
 
+    // RECURSIVIDADE OBS: OS CÓDIGOS DA RAINHA FORAM REUTILIZADOS COM BASE NOS JA FEITOS
+
+    // *1 TORRE ************************
+    void moverTorreDireita(int casas) {
+        if (casas > 0) {
+            printf("Direita\n");
+            moverTorreDireita(casas - 1);
+        }
+    }
+
+    void moverTorreEsquerda(int casas) {
+        if (casas > 0) {
+            printf("Esquerda\n");
+            moverTorreEsquerda(casas - 1);
+        }
+    }
+
+    void moverTorreCima(int casas) {
+        if (casas > 0) {
+            printf("Cima\n");
+            moverTorreCima(casas - 1);
+        }
+    }
+
+    void moverTorreBaixo(int casas) {
+        if (casas > 0) {
+            printf("Baixo\n");
+            moverTorreBaixo(casas - 1);
+        }
+    }
+
+    // BISPO RECURSIVIDADE *****************************
+
+    void moverBispoDiagonalSuperior(int casas) {
+
+        for(int i = 1; i <= casas; i++){
+            for(int j = 1; j <= 1; j++){
+                printf("Direita \n");
+            }
+            printf("Cima \n");
+        }
+    }
+
+    void moverBispoDiagonalSuperiorEsquerda(int casas) {
+           
+        for(int i = 1; i <= casas; i++){
+            for(int j = 1; j <= 1; j++){
+                printf("Esquerda \n");
+            }
+            printf("Cima \n");
+        }
+    }
+
+    void moverBispoDiagonalInferior(int casas) {
+           
+        for(int i = 1; i <= casas; i++){
+            for(int j = 1; j <= 1; j++){
+                printf("Direita \n");
+            }
+            printf("Baixo \n");
+        }
+    }
+
+    void moverBispoDiagonalInferiorEsquerda(int casas) {
+           
+        for(int i = 1; i <= casas; i++){
+            for(int j = 1; j <= 1; j++){
+                printf("Esquerda \n");
+            }
+            printf("Baixo \n");
+        }
+    }
+
+    // CAVALO RECURSIVIDADE *************************************
+
+    void moverCavaloCimaDireita(int casas) {
+        int i = 1;
+        do {
+            int j = 1;
+            do {
+                printf("Cima\n");
+                j++;
+            } while (j <= 2);
+            printf("Direita\n");
+            i++;
+        } while (i <= 1);   
+    }
+
+    void moverCavaloCimaEsquerda(int casas) {
+        int i = 1;
+        do {
+            int j = 1;
+            do {
+                printf("Cima\n");
+                j++;
+            } while (j <= 2);
+            printf("Esquerda\n");
+            i++;
+        } while (i <= 1);   
+    }
+
+    void moverCavaloBaixoDireita(int casas) {
+        int i = 1;
+        do {
+            int j = 1;
+            do {
+                printf("Baixo\n");
+                j++;
+            } while (j <= 2);
+            printf("Direita\n");
+            i++;
+        } while (i <= 1);   
+    }
+
+    void moverCavaloBaixoEsquerda(int casas) {
+        int i = 1;
+        do {
+            int j = 1;
+            do {
+                printf("Baixo\n");
+                j++;
+            } while (j <= 2);
+            printf("Esquerda\n");
+            i++;
+        } while (i <= 1);   
+    }
+
     printf("Opções\n");
     printf("1. Bispo\n");
     printf("2. Rainha\n");
@@ -35,46 +162,22 @@ int main()
         switch (movimento)
         {
         case 1: // MOVIMENTO DIAGONAL BISPO SUPERIOR DIREITA
-
-            while (b < 5)
-            {
-                printf("Direita, ");
-                printf("Cima\n");
-                b++;
-            }
+            moverBispoDiagonalSuperior(5);
 
             break;
 
         case 2: // MOVIMENTO DIAGONAL BISPO SUPERIOR ESQUERDA
-
-            while (b < 5)
-            {
-                printf("Esquerda, ");
-                printf("Cima\n");
-                b++;
-            }
+            moverBispoDiagonalSuperiorEsquerda(5);
 
             break;
 
         case 3: // MOVIMENTO DIAGONAL BISPO INFERIOR DIREITA
-
-            while (b < 5)
-            {
-                printf("Direita, ");
-                printf("Baixo\n");
-                b++;
-            }
+            moverBispoDiagonalInferior(5);
 
             break;
 
         case 4: // MOVIMENTO DIAGONAL BISPO INFERIOR ESQUERDA
-
-            while (b < 5)
-            {
-                printf("Esquerda, ");
-                printf("Baixo\n");
-                b++;
-            }
+            moverBispoDiagonalInferiorEsquerda(5);
 
             break;
 
@@ -102,78 +205,46 @@ int main()
         {
 
         case 1: // MOVIMENTO RAINHA DIREITA
-
-            for (int r = 0; r < 8; r++)
-            {
-                printf("Direita");
-            }
-
+            moverTorreDireita(8);
+            
             break;
 
         case 2: // MOVIMENTO RAINHA ESQUERDA
-
-            for (int r = 0; r < 8; r++)
-            {
-                printf("Esquerda");
-            }
+            moverTorreEsquerda(8);
 
             break;
 
         case 3: // MOVIMENTO RAINHA CIMA
-
-            for (int r = 0; r < 8; r++)
-            {
-                printf("Cima");
-            }
+            moverTorreCima(8);
 
             break;
 
         case 4: // MOVIMENTO RAINHA BAIXO
-
-            for (int r = 0; r < 8; r++)
-            {
-                printf("Baixo");
-            }
+            moverTorreBaixo(8);
 
             break;
 
         case 5: // MOVIMENTO DIAGONAL SUPERIOR DIREITA
 
-            for (int r = 0; r < 8; r++)
-            {
-                printf("Direita");
-                printf("Cima\n");
-            }
+            moverBispoDiagonalSuperior(8);
 
             break;
 
         case 6: // MOVIMENTO DIAGONAL SUPERIOR ESQUERDA
 
-            for (int r = 0; r < 8; r++)
-            {
-                printf("Esquerda");
-                printf("Cima\n");
-            }
+            moverBispoDiagonalSuperiorEsquerda(8);
 
             break;
 
         case 7: // MOVIMENTO DIAGONAL INFERIOR DIREITA
 
-            for (int r = 0; r < 8; r++)
-            {
-                printf("Direita");
-                printf("Baixo\n");
-            }
+            moverBispoDiagonalInferior(8);
 
             break;
 
-        case 8: // MOVIMENTO DIAGONAL INFERIOR BAIXO
+        case 8: // MOVIMENTO DIAGONAL INFERIOR ESQUERDA
 
-            for (int r = 0; r < 8; r++)
-            {
-                printf("Esquerda");
-                printf("Baixo\n");
-            }
+            moverBispoDiagonalInferiorEsquerda(8);
 
             break;
 
@@ -199,47 +270,30 @@ int main()
         {
 
         case 1: // MOVIMENTO TORRE DIREITA
-
-            do
-            {
-                printf("Direita\n"); // imprime a direção do movimento
-                i++;
-            } while (i < 5);
+            moverTorreDireita(5);
 
             break;
 
         case 2: // MOVIMENTO TORRE ESQUERDA
-
-            do
-            {
-                printf("Esquerda\n"); // imprime a direção do movimento
-                i++;
-            } while (i < 5);
+            moverTorreEsquerda(5);
 
             break;
 
         case 3: // MOVIMENTO TORRE SUPERIOR
-
-            do
-            {
-                printf("Cima\n"); // imprime a direção do movimento
-                i++;
-            } while (i < 5);
+            moverTorreCima(5);
 
             break;
 
         case 4: // MOVIMENTO TORRE INFERIOR
-
-            do
-            {
-                printf("Baixo\n"); // imprime a direção do movimento
-                i++;
-            } while (i < 5);
+            moverTorreBaixo(5);
+        
             break;
-
+        
         default:
             printf("Opção inválida");
         }
+
+        break;
 
     case 4: // cavalo
 
@@ -255,77 +309,24 @@ int main()
 
         case 1: // MOVIMENTO CAVALO CIMA CIMA DIREITA
 
-            for (int c = 1; c <= 1; c++)
-            {
-                int a = 1;
-                do
-                {
-                    printf("Cima, direita\n");
-                    a++;
-                } while (a <= 1);
-
-                if (c >= 1)
-                {
-                    printf("Cima");
-                }
-            }
+            moverCavaloCimaDireita(1);
 
             break;
 
         case 2: // MOVIMENTO CAVALO CIMA CIMA ESQUERDA
 
-            for (int c = 1; c <= 1; c++)
-            {
-                int a = 1;
-                do
-                {
-                    printf("Esquerda Cima\n");
-                    a++;
-                } while (a <= 1);
-
-                if (c >= 1)
-                {
-                    printf("         Cima ");
-                }
-            }
+            moverCavaloCimaEsquerda(1);
 
             break;
 
         case 3: // MOVIMENTO CAVALO BAIXO BAIXO DIREITA
 
-            for (int c = 1; c <= 1; c++)
-            {
-                int a = 1;
-                do
-                {
-                    printf("Baixo\n");
-                    a++;
-                } while (a <= 1);
-
-                if (c >= 1)
-                {
-                    printf("Baixo, direita");
-                }
-            }
+            moverCavaloBaixoDireita(1);
 
             break;
 
         case 4: // MOVIMENTO CAVALO BAIXO BAIXO ESQUERDA
-
-            for (int c = 1; c <= 1; c++)
-            {
-                int a = 1;
-                do
-                {
-                    printf("          Baixo\n");
-                    a++;
-                } while (a <= 1);
-
-                if (c >= 1)
-                {
-                    printf("Esquerda, Baixo");
-                }
-            }
+            moverCavaloBaixoEsquerda(1);
             
             break;
 
